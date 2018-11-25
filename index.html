@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sunrin Tab</title>
+	<link rel="stylesheet" type="text/css" href="master.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="Icon.png">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src = "nevi.js"></script>
+</head>
+<body>
+	<article id="panels">
+		<div id="box_timetable" class="panel">
+			<span class="box_container">
+			<span class="tt" id = "asdf">
+				현재 <span id="subj_1">시스템일반</span>
+			</span>
+			<span class="tt" id="tt_2">
+				다음 <span id="subj_2">시스템일반</span>
+			</span>
+			<br>
+			<span class="tt" id = "asdfasdf">
+				5교시 <span id="subj_3">통합사회C</span>
+			</span>
+			<span class="tt" id = "asdfasdfasdf">6교시  <span id="subj_4">보건</span></span>
+
+            </span></span>
+		</div>
+
+		<div id="box_lunch" class="panel">
+			<span class="box_container">
+			<span class="tt">
+				중식
+			</span>
+			<span class="lc">
+				<span id="lunch_menu_contents">찰현미밥<br>갈비탕<br>애호박볶음<br>백순대볶음<br>포기김치<br>박제</span>
+            </span></span>
+		</div>
+	
+		<div id="container_splitter" class="panel_noshadow">
+			<div id="in_box_2x1_top">
+				<span class="halfbox_container">
+					<span class="tt_x">
+						오늘의 일정
+					</span>
+					<span class="lc">
+						<span id="tt_menu_contents">2019학년도 신입생 특별전형 원서접수</span>
+					</span>
+				</span>
+				</span>
+			</div>
+
+				<div id="in_box_1x1_lft" onclick="nevi(localStorage.getItem('address'))">
+					<span class="halfbox_container_btm">
+						<span class="tt_x" >
+							길찾기
+						</span>
+						<img src="img/baseline-directions-24px.svg" class="tt_img">
+
+					</span>
+				</div>
+				<div id="in_box_1x1_rht" onclick = "window.location.href = 'setting.html'">
+					<span class="halfbox_container_btm">
+						<span class="tt_x">
+							설정
+						</span>	
+						<img src="img/baseline-settings-20px.svg" class="tt_img">
+					</span>
+				</div>
+			</div>
+		</div>
+
+
+	</article>
+    <script>
+        if(!localStorage.getItem("num") || !localStorage.getItem("address")){
+            alert("학번과 주소를 등록해주세요.");
+            window.location.href = "setting.html";
+        }
+    </script>
+	<script src = "timeTable.js"></script>
+    <script src = "food.js"></script>
+    <script src = "schedule.js"></script>
+
+</body>
+</html>

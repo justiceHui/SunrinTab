@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>환경 설정</title>
+    <link rel="stylesheet" type="text/css" href="master.css">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="Icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src = "setting.js"></script>
+    <script>
+        let tmp = confirm("Allow-Control-Allow-Origin: * 플러그인을 설치하셨나요?");
+        if(!tmp){
+            alert("이 플러그인을 설치하지 않으면 대부분의 기능을 이용할 수 없습니다. 설치 페이지로 이동합니다.");
+            window.location.href = "https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-ntp-icon";
+        }
+    </script>
+</head>
+<body>
+<div id="settings">
+    <div id="settings_inner_contents">
+        <div class="settings_title">환경 설정</div>
+        <div class="settings_contents">해당 개인 정보는 시간표 및 길찾기 정보를 제공하는 데에만 사용되며, 이외 어떠한 곳에도 사용되지 않습니다.</div>
+        <br><br><br>
+        <div class="settings_contents">학번: <input id="number" class="settings_input" type="text" onclick="this.style.color='#FFFFFF'" size=15></div>
+        <br>
+        <div class="settings_contents">주소: <input id="address" class="settings_input" type="text" onclick="this.style.color='#FFFFFF'" size=15></div>
+        <br><br><br>
+        <div class="settings_contents" onclick = "f()">확인</div>
+    </div>
+</div>
+</body>
+</html>
