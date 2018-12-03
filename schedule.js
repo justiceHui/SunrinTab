@@ -7,10 +7,12 @@ function sch(){
     if (y % 400 === 0 || (y % 4 === 0 && y % 100 !== 0)) dayOfMonth[2] = 29;
     let m = _m; if (m < 10) m = "0" + m.toString();
     let d = _d; if (d < 10) d = "0" + d.toString();
-    let nextDay = d+1; if (nextDay < 10) nextDay = "0" + nextDay.toString();
+    let nextDay = parseInt(d)+1; if (nextDay < 10) nextDay = "0" + nextDay.toString();
     const daySplit = "<em>" + d + "</em>";
     let nextSplit = "<em>" + nextDay + "</em>";
     if (parseInt(nextDay) > dayOfMonth[parseInt(y)]) nextSplit = "</div>";
+    console.log(daySplit);
+    console.log(nextSplit);
     let str_url = "https://stu.sen.go.kr/sts_sci_sf01_001.do?schulCode=B100000658&schulCrseScCode=4&schulKndScCode=04&ay=" + y + "&mm=" + m;
     let final = "";
     $.ajax({
@@ -24,6 +26,7 @@ function sch(){
                 }
             }catch(e){document.getElementById("tt_menu_contents").innerHTML = ("일정 없음");}
             document.getElementById("tt_menu_contents").innerHTML = final;
+            console.log(final);
         }
     });
 }

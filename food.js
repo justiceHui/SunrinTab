@@ -24,6 +24,12 @@ function food() {
 
             foodStr = foodStr.replace("[중식]", "");
             foodStr = foodStr.replace("<br />", "");
+            if(foodStr.split("<br />").length > 6){
+                let tmpArr = foodStr.split("<br />");
+                let tmpStr = "";
+                for(let i=0; i<5; i++) tmpStr += tmpArr[i] + "<br />";
+                foodStr = tmpStr + "...";
+            }
             document.getElementById("lunch_menu_contents").innerHTML = foodStr;
             console.log(foodStr);
             //$('#textvw').val(data);
